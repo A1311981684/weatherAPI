@@ -1,11 +1,11 @@
 package controllers
 
 import (
-	"github.com/astaxie/beego"
-	"weatherAPI/models"
-	"weatherAPI/const"
 	"fmt"
+	"github.com/astaxie/beego"
 	"log"
+	"weatherAPI/const"
+	"weatherAPI/models"
 )
 
 //Operation about Weather Information

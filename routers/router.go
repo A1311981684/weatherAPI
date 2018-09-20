@@ -8,12 +8,15 @@
 package routers
 
 import (
-	"weatherAPI/controllers"
 	"github.com/astaxie/beego"
+	"weatherAPI/controllers"
 )
 
 func init() {
-	ns := beego.NewNamespace("/v1",
+
+	//beego.Router("/camera_view/pic.jpg", &controllers.CameraViewCtr{}, "get:GetJpg")
+
+	ns := beego.NewNamespace("/API",
 		beego.NSNamespace("/weather_info"),
 			beego.NSInclude(
 				&controllers.WeatherInfoController{},

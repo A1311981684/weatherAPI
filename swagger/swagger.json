@@ -13,7 +13,7 @@
             "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
         }
     },
-    "basePath": "/v1",
+    "basePath": "/API",
     "paths": {
         "/user/": {
             "get": {
@@ -311,7 +311,7 @@
                 }
             }
         },
-        "/weather_info/{city}": {
+        "/{city}": {
             "get": {
                 "tags": [
                     "weatherAPI/controllersWeatherInfoController"

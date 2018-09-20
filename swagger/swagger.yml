@@ -9,8 +9,27 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-basePath: /v1
+basePath: /API
 paths:
+  /{city}:
+    get:
+      tags:
+      - weatherAPI/controllersWeatherInfoController
+      description: Get All The Data Can Be Retrieved From The URL
+      operationId: WeatherInfoController.GetAll
+      parameters:
+      - in: path
+        name: city
+        description: The City Needed To Be Checked.
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PrimaryData'
+        "403":
+          description: :city invalid
   /user/:
     get:
       tags:
@@ -166,25 +185,6 @@ paths:
             $ref: '#/definitions/models.WeatherImage'
         "403":
           description: :id or size invalid
-  /weather_info/{city}:
-    get:
-      tags:
-      - weatherAPI/controllersWeatherInfoController
-      description: Get All The Data Can Be Retrieved From The URL
-      operationId: WeatherInfoController.GetAll
-      parameters:
-      - in: path
-        name: city
-        description: The City Needed To Be Checked.
-        required: true
-        type: string
-      responses:
-        "200":
-          description: ""
-          schema:
-            $ref: '#/definitions/models.PrimaryData'
-        "403":
-          description: :city invalid
   /weather_info/forecast/{city}:
     get:
       tags:
